@@ -32,11 +32,15 @@ plot4 <- function(input="household_power_consumption.txt"){
   
   rm(df,df1)
   
-  ## Create the plots and legend
+  
   
   png(file = "plot4.png")
   
+  ## Set the parameter to show a 2x2 plot grid
+  
   par(mfrow=c(2,2))
+  
+  ## Create the plots and legend
   
   plot(febDates$Time, as.numeric(as.character(febDates$Global_active_power)), type="l", ylab="Global Active Power (kilowatts)", xlab="")
   
@@ -52,12 +56,12 @@ plot4 <- function(input="household_power_consumption.txt"){
   
   plot(febDates$Time, as.numeric(as.character(febDates$Global_reactive_power)), type="l", xlab="datetime", ylab="Global_reactive_power")
   
-  ## Copy plot to a png file
-  
-  ## dev.copy(png,"plot4.png")
-  
   ## Turn off the graphics device
   
   dev.off()
+  
+  ## Restore the original parameter
+  
+  par(mfrow=c(1,1))
   
 }

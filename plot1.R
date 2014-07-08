@@ -1,4 +1,4 @@
-plot1 <- function(input){
+plot1 <- function(input="household_power_consumption.txt"){
   
   ## Input the dataset into R
   
